@@ -1,10 +1,15 @@
 
+// BUTTON CLICK EVENT LISTENER
 
 document.addEventListener('click', playerPicked);                       // Adds an event listener to the whole document looking for a click, then running the function if a click is found.
+
+
+// DEFAULT VARIABLES
 
 let PScore = 0;
 let CScore = 0;
 let gameCount = 0;
+
 
 // PLAYER SELECTION
 
@@ -18,19 +23,23 @@ function playerPicked(btnclck) {
             playerSelection.textContent = 'You selected: Rock';
             playRound("rock", compPicked());
             updateScores(PScore, CScore);
+            finishGame(PScore, CScore);
         } else if (btnclck.target.value === 'paper') {
             playerSelection.textContent = 'You selected: Paper';
             playRound("paper", compPicked());
+            finishGame(PScore, CScore);
             updateScores(PScore, CScore);
         } else if (btnclck.target.value === 'scissors') {
             playerSelection.textContent = 'You selected: Scissors';
             playRound("scissors", compPicked());
             updateScores(PScore, CScore);
+            finishGame(PScore, CScore);
         } else {
             console.log('Error 1');
         }
     }
 }
+
 
 // COMPUTER SELECTION
 
@@ -127,3 +136,18 @@ function updateScores(PScore, CScore) {
     }
 }
 
+
+// FINISH THE GAME
+
+let gameStatus = document.querySelector('.gameStatus');
+
+function finishGame(PScore, CScore) {
+
+    if (PScore === 5 && CScore < 5) {
+        gameStatus.textContent = 'Player Wins';
+        console.log('Player Wins');
+    } else if (PScore <5 && CScore === 5) {
+        gameStatus.textContent = 'Computer Wins';
+        console.log('Computer Wins');
+    }
+}
