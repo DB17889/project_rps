@@ -2,6 +2,10 @@
 
 document.addEventListener('click', playerPicked);                       // Adds an event listener to the whole document looking for a click, then running the function if a click is found.
 
+let PScore = 0;
+let CScore = 0;
+let gameCount = 0;
+
 // PLAYER SELECTION
 
 let playerSelection = document.querySelector('.playerOutput');
@@ -13,18 +17,20 @@ function playerPicked(btnclck) {
         if (btnclck.target.value === 'rock') {
             playerSelection.textContent = 'You selected: Rock';
             playRound("rock", compPicked());
+            updateScores(PScore, CScore);
         } else if (btnclck.target.value === 'paper') {
             playerSelection.textContent = 'You selected: Paper';
             playRound("paper", compPicked());
+            updateScores(PScore, CScore);
         } else if (btnclck.target.value === 'scissors') {
             playerSelection.textContent = 'You selected: Scissors';
             playRound("scissors", compPicked());
+            updateScores(PScore, CScore);
         } else {
             console.log('Error 1');
         }
     }
 }
-
 
 // COMPUTER SELECTION
 
@@ -54,16 +60,11 @@ function compPicked() {
 }
 
 
-
-
-
-
 // PLAY ONE ROUND
 
 function startRound(btnclck) {
     if (btnclck.target.classList.contains("btn")){  
         playRound;
-        scores;
     }
 }
 
@@ -75,26 +76,32 @@ function playRound(playerSelection, computerSelection) {
                 roundOutput.textContent = 'It\'s a draw';
             } else if (computerSelection === 'paper') {
                 roundOutput.textContent = 'Paper beats Rock! You Lose!';
+                CScore ++;
             } else if (computerSelection === 'scissors') {
                 roundOutput.textContent = 'Rock beats Scissors! You Win!';
+                PScore ++;
             } else {
                 console.log('Error 3');
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
-                roundOutput.textContent = 'Paper beats Rock! You Win!'
+                roundOutput.textContent = 'Paper beats Rock! You Win!';
+                PScore ++;
             } else if (computerSelection === 'paper') {
                 roundOutput.textContent = 'It\'s a draw';
             } else if (computerSelection === 'scissors') {
-                roundOutput.textContent = 'Scissors beats Paper! You Lose!'
+                roundOutput.textContent = 'Scissors beats Paper! You Lose!';
+                CScore ++;
             } else {
                 console.log('Error 4');
             }
         } else if (playerSelection === 'scissors') {
             if (computerSelection === 'rock') {
-                roundOutput.textContent = 'Rock beats Scissors! You Lose!'
+                roundOutput.textContent = 'Rock beats Scissors! You Lose!';
+                CScore ++;
             } else if (computerSelection === 'paper') {
-                roundOutput.textContent = 'Scissors beats Paper! You Win!'
+                roundOutput.textContent = 'Scissors beats Paper! You Win!';
+                PScore ++;
             } else if (computerSelection === 'scissors') {
                 roundOutput.textContent = 'It\'s a draw';
             } else {
@@ -104,20 +111,19 @@ function playRound(playerSelection, computerSelection) {
     }
 
 let roundOutput = document.querySelector('.roundOutput');
+
+
+// UPDATES SCORES
+
 let playerScore = document.querySelector('.playerScore');
 let compScore = document.querySelector('.compScore');
 
+function updateScores(PScore, CScore) { 
 
+    if (PScore > 0 || CScore > 0) { 
 
-// KEEPING SCORE - CANT GET THIS TO WORK!
-
-let PScore = '1';
-let CScore = '0';
-
-function scores() {
-    if (PScore > 1 || CScore > 1) {  
-        playerScore.textContent = 'Player Score: ' + PScore;
-        compScore.textContent = 'Computer Score: ' + CScore;
+        playerScore.textContent = 'Players score is ' + PScore;
+        compScore.textContent = 'Computers score is ' + CScore;
     }
 }
 
