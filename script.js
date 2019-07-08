@@ -8,7 +8,6 @@ document.addEventListener('click', playerPicked);                       // Adds 
 
 let PScore = 0;
 let CScore = 0;
-let gameCount = 0;
 
 
 // PLAYER SELECTION
@@ -17,7 +16,7 @@ let playerSelection = document.querySelector('.playerOutput');
 
 function playerPicked(btnclck) {                                    
 
-    if (btnclck.target.classList.contains("btn")){                      // Only runs the function if the click is against a html class that contains 'btn'.
+    if (btnclck.target.classList.contains("btn") && (PScore < 5 && CScore < 5)){                      // Only runs the function if the click is against a html class that contains 'btn'.
         
         if (btnclck.target.value === 'rock') {
             playerSelection.textContent = 'You selected: Rock';
