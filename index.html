@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-
+        <link href="./style.css" type="text/css" rel="stylesheet">
     </head>
+    
     <body>
-        <div class="page-header"></div>
+        <div class="page-container">
 
-        <div class="page-body">
-            <div class="allbuttons">
-                <button class="btn" value="rock">ROCK</button>
-                <button class="btn" value="paper">PAPER</button>
-                <button class="btn" value="scissors">SCISSORS</button>
+            <div class="page-header">
+                <h1>Rock, Paper, Scissors!</h1>
+                <p id='header-text'> First to win 5 rounds wins the match!</p>
             </div>
 
-            <p class="playerOutput"></p>
-            <p class="compOutput"></p>
-            <p class="roundOutput"></p>
+            <div class="page-body">
+                <p id="body-inst">Select your weapon...</p>
+                <div class="allbuttons">
+                    <button class="btn" value="rock">ROCK</button>
+                    <button class="btn" value="paper">PAPER</button>
+                    <button class="btn" value="scissors">SCISSORS</button>
+                </div>
 
-            <div class="scores">
-                <p class="playerScore"></p>
-                <p class="compScore"></p>
+                <p class="playerOutput"></p>
+                <p class="compOutput"></p>
+                <p class="roundOutput"></p>
+
+                <div class="scores">
+                    <p class="playerScore"></p>
+                    <p class="compScore"></p>
+                </div>
+
+                <p class='gameStatus'></p>
+
             </div>
 
-            <p class='gameStatus'></p>
+        </div>
+            
+            <div class="page-footer">
+                <p id="footer-text">The Odin Project JavaScript "Rock, Paper, Scissors" Task. 
+                    Created by DB17889, July 2019</p>            
+            </div>
 
-        </div>
-        
-        <div class="page-footer">
-            <script src="./script.js"></script>
-        </div>
+
+
+        <script src="./script.js"></script>
+
     </body>
 </html>
