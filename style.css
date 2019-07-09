@@ -37,8 +37,37 @@ html, body {
     background: #e6f0ea;
     border-bottom: solid black;
     border-top: solid black;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
-.page-body {
-    padding-top: 80px;
+
+.btn {
+    height:150px;
+    width: 150px;
+    background-color: rgb(128, 236, 85);
+    font-size: 24px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+#body-inst {
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-top: 30px;
+}
+
+
+
+.outputContainer {
+    border-bottom: solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.scores {
+    padding-top: 20px;
 }

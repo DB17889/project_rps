@@ -128,10 +128,10 @@ let compScore = document.querySelector('.compScore');
 
 function updateScores(PScore, CScore) { 
 
-    if (PScore > 0 || CScore > 0) { 
+    if (PScore >= 0 || CScore >= 0) { 
 
-        playerScore.textContent = 'Players score is ' + PScore;
-        compScore.textContent = 'Computers score is ' + CScore;
+        playerScore.textContent = 'Player: ' + PScore;
+        compScore.textContent = 'Computer: ' + CScore;
     }
 }
 
