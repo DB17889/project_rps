@@ -77,3 +77,9 @@ html, body {
     font-size: 10px;
     height: 20px;
 }
+
+.gameStatus {
+    font-size: 30px;
+    color: red;
+    font-weight: bolder
+}

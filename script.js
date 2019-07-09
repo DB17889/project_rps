@@ -143,10 +143,10 @@ let gameStatus = document.querySelector('.gameStatus');
 function finishGame(PScore, CScore) {
 
     if (PScore === 5 && CScore < 5) {
-        gameStatus.textContent = 'Player Wins';
+        gameStatus.textContent = 'PLAYER WINS';
         console.log('Player Wins');
     } else if (PScore <5 && CScore === 5) {
-        gameStatus.textContent = 'Computer Wins';
+        gameStatus.textContent = 'COMPUTER WINS';
         console.log('Computer Wins');
     }
 }
