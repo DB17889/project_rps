@@ -42,6 +42,14 @@ html, body {
 }
 
 
+#body-inst {
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-top: 30px;
+}
+
 .btn {
     height:150px;
     width: 150px;
@@ -51,23 +59,21 @@ html, body {
     border-radius: 20px;
 }
 
-#body-inst {
-    font-family: cursive;
-    font-weight: bolder;
-    font-size: 20px;
-    margin-bottom: 25px;
-    padding-top: 30px;
-}
-
-
-
-.outputContainer {
+.allbuttons {
+    padding-bottom: 30px;
     border-bottom: solid black;
+}
+.outputContainer {
     padding-top: 20px;
-    padding-bottom: 20px;
     font-size: 14px;
 }
 
-.scores {
-    padding-top: 20px;
+.roundOutput {
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.resetGame {
+    font-size: 10px;
+    height: 20px;
 }

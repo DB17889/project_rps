@@ -1,8 +1,8 @@
 
 // BUTTON CLICK EVENT LISTENER
 
-document.addEventListener('click', playerPicked);                       // Adds an event listener to the whole document looking for a click, then running the function if a click is found.
-
+document.addEventListener('click', playerPicked);       // Adds an event listener to the whole document looking for a click, then running the function if a click is found.
+document.addEventListener('click', resetScores);        // ...as above but for reset scores only.
 
 // DEFAULT VARIABLES
 
@@ -130,8 +130,8 @@ function updateScores(PScore, CScore) {
 
     if (PScore >= 0 || CScore >= 0) { 
 
-        playerScore.textContent = 'Player: ' + PScore;
-        compScore.textContent = 'Computer: ' + CScore;
+        playerScore.textContent = 'Players Score: ' + PScore;
+        compScore.textContent = 'Computer Score: ' + CScore;
     }
 }
 
@@ -149,4 +149,21 @@ function finishGame(PScore, CScore) {
         gameStatus.textContent = 'Computer Wins';
         console.log('Computer Wins');
     }
+}
+
+
+// RESET SCORES 
+
+function resetScores(resetclck) {
+
+    if (resetclck.target.classList.contains("resetGame")) {    
+        console.log('clicked');
+        PScore = 0;
+        CScore = 0;
+        playerSelection.textContent = '';
+        computerSelection.textContent = '';
+        roundOutput.textContent = '';
+        playerScore.textContent = '';
+        compScore.textContent = '';
+    } 
 }
