@@ -165,5 +165,6 @@ function resetScores(resetclck) {
         roundOutput.textContent = '';
         playerScore.textContent = '';
         compScore.textContent = '';
+        gameStatus.textContent = '';
     } 
 }
